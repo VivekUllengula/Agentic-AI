@@ -1,0 +1,15 @@
+article = """
+The United States and India recently announced a rollback of certain tariffs imposed during previous trade disputes.
+The move is expected to boost bilateral trade, particularly in sectors like agriculture, electronics, and manufacturing. 
+Economists believe this step will enhance market access and reduce costs for exporters on both sides, 
+while signaling improved geopolitical alignment between the two democracies.
+"""
+
+headlines = [
+"US and India remove tariffs to boost trade ties",
+"India launches lunar probe to explore moon's south pole",
+"Tariff rollback improves US-India manufacturing access",
+"Stock markets dip amid inflation concerns in Asia",
+"Improved trade relations could strengthen US-India alliance",
+"India bans certain Chinese tech products from ports",
+]
