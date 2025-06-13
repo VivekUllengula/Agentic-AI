@@ -9,7 +9,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer, GPT2Model
 
 NEWS_API_URL = "https://newsapi.org/v2/everything"
 API_KEY = "b566af77a35141dca681d9db6e681d32"
-HEADLINE_COUNT =3  
+HEADLINE_COUNT = 5 
 ARTICLE_COUNT = 5
 
 logging.basicConfig(level=logging.INFO, format= "%(asctime)s - %(levelname)s -%(message)s")
@@ -42,19 +42,32 @@ def fetch_news_articles(api_key, count) -> list[dict]:
     logging.info(f"Fetched {len(news_articles)} articles")
     return news_articles
 
-def generate_headlines(prompt):
+def generate_headlines(prompt,count=5):
     news_headline_tokens = tokenizer(prompt, return_tensors="pt").input_ids
-    headlines = gen_model.generate(
+    outputs = gen_model.generate(
         news_headline_tokens,
-        num_return_sequences = 1,
-        max_new_tokens = 50,
+        num_return_sequences = 5,
+        max_new_tokens = 20,
         do_sample = True,
         temperature = 0.8,
         top_k = 50,
         top_p = 0.95
     )
 
-    return [tokenizer.decode(headline, skip_special_tokens = True).replace(prompt, "").strip() for headline in headlines]
+    clean_headlines = []
+    seen = set()
+    for output in outputs:
+        decoded = tokenizer.decode(output, skip_special_tokens=True).replace(prompt, "").strip()
+        # Keep only first line before any newline or special characters
+        headline = decoded.split("\n")[0].strip()
+        if headline and headline not in seen:
+            seen.add(headline)
+            clean_headlines.append(headline)
+
+        if len(clean_headlines) == count:
+            break
+
+    return clean_headlines
 
 
 def process_news_articles(news_articles):
@@ -87,6 +100,12 @@ def process_news_articles(news_articles):
         # Sort top headlines
         result.sort(key=lambda x: x["score"], reverse=True)
 
+        #Get the top 5 headlines
+        top_headlines = [
+            {"score": idx + 1, "text": item["text"]}
+            for idx, item in enumerate(result[:5])
+        ]
+
         # Prepare structured article with top headlines
         article_data = {
             "source": news_article.get("source", {}),
@@ -97,7 +116,7 @@ def process_news_articles(news_articles):
             "urlToImage": news_article.get("urlToImage"),
             "publishedAt": news_article.get("publishedAt"),
             "content": content,
-            "headlines": result  # All sorted headline suggestions with score
+            "headlines": top_headlines  # All sorted headline suggestions with score
         }
 
         processed_articles.append(article_data)
@@ -119,7 +138,7 @@ def process_news_articles(news_articles):
     }
 
 
-def save_json(data, filename = "detailed_headlines_output.json"):
+def save_json(data, filename = "zpuv_vivek_ullengula_response.json"):
 
     dir_name = os.path.dirname(filename)
     if dir_name:
