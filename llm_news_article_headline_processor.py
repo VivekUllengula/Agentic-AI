@@ -9,7 +9,7 @@ API_KEY = "fd5dd9059e6c423ab6d91ea447f2e72d"
 HEADLINE_COUNT =3  
 ARTICLE_COUNT = 5
 
-logging.basicConfig(level=logging.INFO, format= "%(asctime)s - %(levelname)s -%(messgae)s")
+logging.basicConfig(level=logging.INFO, format= "%(asctime)s - %(levelname)s -%(message)s")
 
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 gen_model = GPT2LMHeadModel.from_pretrained("gpt2")
@@ -44,7 +44,8 @@ def generate_headlines(prompt):
     headlines = gen_model.generate(
         news_headline_tokens,
         num_return_sequences = 1,
-        max_tokens = 50,
+        max_new_tokens = 50,
+        do_sample = True,
         temperature = 0.8,
         top_k = 50,
         top_p = 0.95
@@ -84,9 +85,15 @@ def process_news_articles(news_articles):
             result.append((headline, score))
 
         best_headline, score = max(result, key = lambda x: x[1])
-        print (f"{best_headline} - Score {score:.4f}")
+        print("\n" + "="*60)
+        print(f"ARTICLE #{id + 1}")
+        print(f"Title: {title}")
+        print(f"Generated Headline: {best_headline}")
+        print(f"Semantic Similarity Score: {score:.4f}")
+        print("="*60 + "\n")
 
-        if __name__ == "__main__":
-             articles = fetch_news_articles(API_KEY, ARTICLE_COUNT)
-             process_news_articles(articles)
+
+if __name__ == "__main__":
+    articles = fetch_news_articles(API_KEY, ARTICLE_COUNT)
+    process_news_articles(articles)
 
