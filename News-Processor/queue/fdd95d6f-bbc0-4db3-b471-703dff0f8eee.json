@@ -1,0 +1,14 @@
+{
+  "source": {
+    "id": null,
+    "name": "CoinDesk"
+  },
+  "author": "Sam Reynolds, AI Boost",
+  "title": "Bitcoin Core 30 to Increase OP_RETURN Data Limit After Developer Debate Concludes",
+  "description": "Bitcoin Core 30 is scheduled to be implemented in October.",
+  "url": "https://www.coindesk.com/tech/2025/06/10/bitcoin-core-30-to-increase-op_return-data-limit-after-developer-debate-concludes",
+  "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/3932526bedfd3f096bdd0a2f4305463f0a06ea75-1520x1140.jpg",
+  "publishedAt": "2025-06-10T11:43:06Z",
+  "content": "The developers of Bitcoin Core, the primary open-source software for connecting the blockchain behind the world's largest cryptocurrency, said October's version 30 release will increase the default l\u2026 [+3539 chars]",
+  "fetched_at": "2025-07-02T05:11:12.117769+00:00"
+}

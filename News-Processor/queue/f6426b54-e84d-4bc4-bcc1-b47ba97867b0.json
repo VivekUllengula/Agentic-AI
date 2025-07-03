@@ -1,0 +1,14 @@
+{
+  "source": {
+    "id": null,
+    "name": "Johndcook.com"
+  },
+  "author": "John",
+  "title": "Typesetting Sha and Bitcoin",
+  "description": "I went down a rabbit hole this week using two symbols in LaTeX. The first was the Russian letter Sha (\u0428, U+0248), and the second was the currency symbol for Bitcoin (\u20bf, U+20BF). Sha I thought there would be a LaTeX package that would include \u0428 as a symbol rat\u2026",
+  "url": "https://www.johndcook.com/blog/2025/06/18/typesetting-sha-and-bitcoin/",
+  "urlToImage": "https://www.johndcook.com/blog/wp-content/uploads/2022/05/twittercard.png",
+  "publishedAt": "2025-06-18T11:45:35Z",
+  "content": "I went down a rabbit hole this week using two symbols in LaTeX. The first was the Russian letter Sha (, U+0248), and the second was the currency symbol for Bitcoin (, U+20BF).\r\nSha\r\nI thought there w\u2026 [+1521 chars]",
+  "fetched_at": "2025-07-02T05:11:12.115874+00:00"
+}

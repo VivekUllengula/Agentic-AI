@@ -1,0 +1,14 @@
+{
+  "source": {
+    "id": null,
+    "name": "Wikipedia.org"
+  },
+  "author": "Contributors to Wikimedia projects",
+  "title": "Reproducible Builds",
+  "description": "Comments",
+  "url": "https://en.wikipedia.org/wiki/Reproducible_builds",
+  "urlToImage": null,
+  "publishedAt": "2025-06-28T22:08:25Z",
+  "content": "Logo of the Software Freedom Conservancy's Reproducible Builds project\r\nReproducible builds, also known as deterministic compilation, is a process of compiling software which ensures the resulting bi\u2026 [+7776 chars]",
+  "fetched_at": "2025-07-02T05:11:12.455366+00:00"
+}

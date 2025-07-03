@@ -1,0 +1,14 @@
+{
+  "source": {
+    "id": null,
+    "name": "R-bloggers.com"
+  },
+  "author": "Selcuk Disci",
+  "title": "Correlation Analysis of Silver, Bitcoin, SOXX, and Blockchain Index with {corrr} package",
+  "description": "Silver, Nasdaq Blockchain Economy Index, Bitcoin, and iShares Semiconductor ETF are always thought of as correlated with each other by investors. We will test this perception with the corrr package. The common perception appears to be correct based on the cor\u2026",
+  "url": "https://www.r-bloggers.com/2025/06/correlation-analysis-of-silver-bitcoin-soxx-and-blockchain-index-with-corrr-package/",
+  "urlToImage": "https://datageeek.com/wp-content/uploads/2025/06/corr.png?w=1024",
+  "publishedAt": "2025-06-17T09:36:40Z",
+  "content": "[This article was first published on DataGeeek, and kindly contributed to R-bloggers]. (You can report issue about the content on this page here)\r\nWant to share your content on R-bloggers? click here\u2026 [+1472 chars]",
+  "fetched_at": "2025-07-02T05:11:12.062551+00:00"
+}

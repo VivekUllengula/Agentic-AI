@@ -1,0 +1,14 @@
+{
+  "source": {
+    "id": null,
+    "name": "Slashdot.org"
+  },
+  "author": "Slashdot Staff",
+  "title": "VP.net Promises \"Cryptographically Verifiable Privacy\"",
+  "description": "TorrentFreak spotlights VP.net, a brand-new service from Private Internet Access founder Andrew Lee (the guy who gifted Linux Journal to Slashdot) that eliminates the classic \"just trust your VPN\" problem by locking identity-mapping and traffic-handling insid\u2026",
+  "url": "https://news.slashdot.org/story/25/06/30/1852224/vpnet-promises-cryptographically-verifiable-privacy",
+  "urlToImage": "https://a.fsdn.com/sd/topics/news_64.png",
+  "publishedAt": "2025-06-30T18:50:00Z",
+  "content": "The company promises 'cryptographically verifiable privacy' by using special hardware 'safes' (Intel SGX), so even the provider can't track what its users are up to.\r\nThe design goal is that no one, \u2026 [+475 chars]",
+  "fetched_at": "2025-07-02T05:11:12.024237+00:00"
+}

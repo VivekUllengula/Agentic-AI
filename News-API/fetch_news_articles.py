@@ -3,15 +3,18 @@ from uuid import uuid4
 from fastapi import FastAPI
 from dotenv import load_dotenv
 
-load_dotenv() #Loading the dotenv to get the api from ebv variables
+#Loading the dotenv to get the api from ebv variables
+load_dotenv() 
 
-app = FastAPI() #Initiating the Fast API
+#Initiating the Fast API
+app = FastAPI()
 
 NEWS_API_URL = "https://newsapi.org/v2/everything?q="
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
-
 ARTICLES_DIR = "articles" 
-os.makedirs(ARTICLES_DIR, exist_ok=True) #Creating the articles directory
+
+#Creating the articles directory
+os.makedirs(ARTICLES_DIR, exist_ok=True) 
 
 def save_articles_as_json(article):
     uid = str(uuid.uuid4())
