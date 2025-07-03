@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Vivek",
+        "age": 25,
+        "status": "active"
+    },
+    {
+        "name": "Ravi",
+        "age": 22,
+        "status": "inactive"
+    }
+]
