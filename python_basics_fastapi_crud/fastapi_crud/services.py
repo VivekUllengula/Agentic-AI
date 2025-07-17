@@ -8,10 +8,12 @@ DATA_FILE = Path("data.json")
 if not DATA_FILE.exists():
     DATA_FILE.write_text("{}")
 
+#Reading a file
 def read_data():
     with open(DATA_FILE, "r") as f:
         return json.load(f)
     
+#Writing into a file    
 def write_data(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
