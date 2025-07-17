@@ -1,0 +1,12 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Mobile",
+        "description": "An electronic device used to make calls"
+    },
+    "2": {
+        "id": 2,
+        "name": "Charger",
+        "description": "Used to charge mobiles."
+    }
+}
