@@ -136,7 +136,7 @@ def write_json(data):
     with open("data.json", "w") as f: 
         json.dump(data, f, indent=4) 
 ```
-### 1.Reading from a JSON file:
+### 4.Reading from a JSON file:
 ```python
 def read_json():
     with open("data.json", "r") as f: 
@@ -187,7 +187,7 @@ Run the server:
 ```bash
 uvicorn main:app -- reload
 ```
-### Please go through the attached project to get a clear understanding of FastAPI and CRUD operations
+### ➡️ Please go through the attached project to get a clear understanding of FastAPI and CRUD operations
 
 ### ✅ Conclusion:
 This guide introduced key Python concepts including decorators, lambda functions, generators, data structures and file handling. You have also learned how to build simple CRUD API using FastAPI.
