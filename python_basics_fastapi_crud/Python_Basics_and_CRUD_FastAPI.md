@@ -142,7 +142,7 @@ def read_json():
     with open("data.json", "r") as f: 
         data = json.load(f)
 ```
-## Important File Operations
+## Important File access modes
   
 **r**  -> 	        Read-only mode.	            Opens the file for reading. File must exist; otherwise, it raises an error.  
 **rb** ->	        Read-only in binary mode.	Opens the file for reading binary data. File must exist; otherwise, it raises an error.  
@@ -192,5 +192,27 @@ uvicorn main:app -- reload
 ### ✅ Conclusion:
 This guide introduced key Python concepts including decorators, lambda functions, generators, data structures and file handling. You have also learned how to build simple CRUD API using FastAPI.
 
+## Interview questions
+
+1. What is a decorator in Python and how is it used?  
+2. Can you write a simple example of a Python decorator?  
+3. What are lambda functions in Python? How are they different from regular functions?  
+4. Give an example where a lambda function is used with **filter()**.  
+5. What are generators in Python? How do they differ from regular functions?  
+6. What is the use of the **yield** keyword?  
+7. What are the advantages of using generators?  
+8. What is the difference betweena list and a dictionary in Pyhton?  
+9. Can you explain list comprehension with an example?  
+10. How do you read and write files in Python?  
+11. What are different file access modes in Python?  
+12. How do you handle file not found errors in Python?  
+13. What is FastAPI and why would you use it?  
+14. How does FastAPI comapre to Flask?  
+15. What is Pydantic used for in FastAPI?  
+16. What HTTP methods are used for CRUD operations?  
+17. Can you descrie the project structure of a FastAPI?  
+18. How do you define a model in FastAPI using Pydantic?
+19. How do you handle errors in FastAPI routes?  
+20. How would you persist data in FastAPI app without using a database?  
 
 
