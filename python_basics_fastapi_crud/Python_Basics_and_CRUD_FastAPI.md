@@ -1,8 +1,15 @@
-# Introduction
-➡️ Python is a versatile programming language known for its ease of use and power. This article will cover the topics for python basics such as decorators, lambda functions, generators, dictionaries, lists, file handling. Then we will also build a simple CRUD application using FastAPI.
+# Understanding Decorators, Lambdas, Generators, Dictionary, List & File Handling in Python and FastAPI CRUD
 
+## Overview
+➡️ In this guide, you'll explore core Python concepts and how to apply them in a practical way by building a CRUD API using **FastAPI**.We'll start with  foundatational Python topics such as decorators, lambda functions, generators, data structures, and file handling.Then, we'll use that knowledge to build a complete FastAPI application with CRUD operations and Pydantic models.
 
-# 1.Understanding Decorators, Lambdas, Generators Dictionary, List &  File Handling in Python
+### This guide includes:
+- Python basics(functions, decorators, lambdas, etc.)
+- Data structures like dictionaries and lists
+- File handling and JSON I/O
+- Building a FastAPI app from scratch
+- CRUD operations using an in-memory store
+- Interview prep questions
 
 ## 1.1 Decorators
 ➡️ A decorator is function thet wraps another function to modify or enhance its behaviour without changing it's code.
@@ -151,7 +158,7 @@ def read_json():
 **wb** ->	        Write in binary mode.	    Opens the file for writing binary data. Creates a new file or truncates the existing file.  
   
 **a**	->        Append mode.	            Opens the file for appending data. Creates a new file if it doesn't exist.  
-**----------------------------------------------------------------------------------------------------------------------------------**  
+--- 
 
 
 ### 💡 File Hnadling is used for logs, configuration, or persistent data storage (Eg: JSON files)
@@ -187,7 +194,24 @@ Run the server:
 ```bash
 uvicorn main:app -- reload
 ```
-### ➡️ Please go through the attached project to get a clear understanding of FastAPI and CRUD operations
+## 2.5 What is Pydantic?
+Pydantic is a data validation and parsing library in FastAPI. It lets you define classes with type annotations and validates incoming data to ensure it matches those types. If the input is invalid, FastAPI automatically returns a `422` error with a helpful message.
+
+### Example:
+```python 
+from pydantic import BaseModel
+
+class Item(BaseModel):
+    id: int
+    name: str
+    description: str = ""
+```
+This defines a model for input and output that ensures the `id` is always an integer, `name` is a string, etc.
+
+### CRUD Operations with FastAPI - `Code` 
+
+### `main.py` - Application Entry Point
+```python
 
 ### ✅ Conclusion:
 This guide introduced key Python concepts including decorators, lambda functions, generators, data structures and file handling. You have also learned how to build simple CRUD API using FastAPI.
