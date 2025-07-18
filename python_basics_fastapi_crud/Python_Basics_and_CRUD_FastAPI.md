@@ -159,10 +159,8 @@ def read_json():
   
 **a**	->        Append mode.	            Opens the file for appending data. Creates a new file if it doesn't exist.  
 
---- 
-
-
 ### 💡 File Hnadling is used for logs, configuration, or persistent data storage (Eg: JSON files)
+--- 
 
 # 2. CRUD Application with FastAPI
 
@@ -254,6 +252,44 @@ When a request is made to POST or PUT an item, FastAPI,
 - Automatically converts it into an `Item`object.
 - Returns a 422 error if invalid (e.g.,`name` is missing or not a string).
 
+### `services.py` - Business Logic Layer
+This is where all your data-handling logic goes. Think of it like a **mini service layer**.
+
+#### Why separate logic into services:
+- Keeps `main.py` clean.
+- Makes code reusable, testable, and maintainable.
+
+#### Example Explained:
+```python 
+def get_item(item_id: int):
+    data = read_data()
+    return data.get(str(item_id))
+```
+- Returns a specific ite based on the `id`.
+
+###Another function
+```python 
+def update_item(item_id: int, item: Item):
+    data = read_data()
+    if str(item_id) not in data:
+        return None
+    data[str(item_id)] = item.dict()
+    write_data(data)
+    return item
+```
+- Finds the index of the item to update
+- Replaces the item with the new data.
+- Returns the updated item if successful, else `None`.
+
+## In summary:
+
+| File Name    | Role     | Key Purpose    |
+| ------- | ------------ | ------- |
+| `main.py` | API routes/controller | Handles HTTP requests/responses |
+| `model.py` | Schema definition(Pydantic) | Validates and parses request/response data |
+| `services.py` | Business logic layer | Implements core logic like CRUD operations |
+
+##### Each files plays a specific role in making your FastAPI app clean, scalable, and professional.
 
 ### ✅ Conclusion:
 This guide introduced key Python concepts including decorators, lambda functions, generators, data structures and file handling. You have also learned how to build simple CRUD API using FastAPI.
