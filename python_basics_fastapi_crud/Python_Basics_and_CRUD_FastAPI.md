@@ -267,7 +267,7 @@ def get_item(item_id: int):
 ```
 - Returns a specific ite based on the `id`.
 
-###Another function
+### Another function
 ```python 
 def update_item(item_id: int, item: Item):
     data = read_data()
@@ -289,7 +289,7 @@ def update_item(item_id: int, item: Item):
 | `model.py` | Schema definition(Pydantic) | Validates and parses request/response data |
 | `services.py` | Business logic layer | Implements core logic like CRUD operations |
 
-##### Each files plays a specific role in making your FastAPI app clean, scalable, and professional.
+##### Each file plays a specific role in making your FastAPI app clean, scalable, and professional.
 
 ### ✅ Conclusion:
 This guide introduced key Python concepts including decorators, lambda functions, generators, data structures and file handling. You have also learned how to build simple CRUD API using FastAPI.
