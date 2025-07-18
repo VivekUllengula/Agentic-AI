@@ -158,6 +158,7 @@ def read_json():
 **wb** ->	        Write in binary mode.	    Opens the file for writing binary data. Creates a new file or truncates the existing file.  
   
 **a**	->        Append mode.	            Opens the file for appending data. Creates a new file if it doesn't exist.  
+
 --- 
 
 
@@ -208,10 +209,51 @@ class Item(BaseModel):
 ```
 This defines a model for input and output that ensures the `id` is always an integer, `name` is a string, etc.
 
-### CRUD Operations with FastAPI - `Code` 
+### CRUD Operations with FastAPI - *`Code Explanation`* 
 
 ### `main.py` - Application Entry Point
-```python
+This is the heart of your FastAPI app. It defines the API (routes) and connects each endpoint to a function from the `services.py` module.
+
+#### What it does:
+- `FastAPI()`: Initilizes the app.
+- `@app.get`, `@app.post`,etc.: Define HTTP methods and their respective URLs.
+- `HTTPException`: Hanles error responses clearly.
+
+#### Example Explained:
+```python 
+@app.get("/items/{item_id}")
+def read(item_id: int):
+    item = get_item(item_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    return item
+```
+- `item_id: int`: Path parameter.
+- Calls a service (`get_item`) to retrieve data.
+- If item doesn't exist, throws a `404` with a message.
+
+This is the **API controller layer**, keeping your app modular by passing logic to `services.py`.
+
+### `model.py` - Data Validation with Pydantic
+This file defines the **schema** for your data using Pydantic's `BaseModel`.
+
+#### What it does:
+- Ensures incoming data matches expected types.
+- Validates inputs automatically.
+- Is used in both request adn respnse bodies.
+
+#### Example Explained:
+```python 
+class Item(BaseModel):
+    id: int
+    name: str
+    description: str = ""
+```
+When a request is made to POST or PUT an item, FastAPI,
+- Validates the request JSON against the model.
+- Automatically converts it into an `Item`object.
+- Returns a 422 error if invalid (e.g.,`name` is missing or not a string).
+
 
 ### ✅ Conclusion:
 This guide introduced key Python concepts including decorators, lambda functions, generators, data structures and file handling. You have also learned how to build simple CRUD API using FastAPI.
