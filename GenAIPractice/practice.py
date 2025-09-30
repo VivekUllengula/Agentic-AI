@@ -17,7 +17,7 @@ def generate(contents):
         contents=contents,
         config={
             "max_output_tokens": 50,
-            "system_instruction": "You are a helpful assistant that is always serious, and uses harsh language.",
+            "system_instruction": "You are a helpful assistant that is always serious, and uses harsh",
         }
     )
     return response.text
