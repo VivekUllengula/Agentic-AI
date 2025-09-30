@@ -38,3 +38,4 @@ chain = LLMChain(llm=llm, prompt=prompt)
 for i, chunk in enumerate(chunks):
     chunk_summary = chain({"text": chunk})
     print (f"\n--- Chunk {i+1} : {chunk} \nSummary ---\n {chunk_summary}")
+    

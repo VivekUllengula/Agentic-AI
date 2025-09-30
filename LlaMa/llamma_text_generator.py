@@ -12,7 +12,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
 #User input
-prompt = "The weather today is"
+prompt = "Why IT industry is"
 
 #Tokenize input
 inputs = tokenizer(prompt, return_tensors="pt").to(device)

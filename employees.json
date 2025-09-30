@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Manish",
+        "designation": "Developer",
+        "_Employer__salary": 75000.0,
+        "type": "Employer"
+    },
+    {
+        "name": "Dhanuj",
+        "designation": "Developer",
+        "_Employer__salary": 75000.0,
+        "type": "Employer"
+    },
+    {
+        "name": "Baji",
+        "designation": "Manager",
+        "_Employer__salary": 120000.0,
+        "team_size": 50,
+        "type": "Manager"
+    }
+]
