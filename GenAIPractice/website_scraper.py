@@ -12,7 +12,7 @@ import requests
 class Website:
     def __init__(self, url):
         self.url = url
-        self.title = ""
+        self.title = "" 
         self.body = ""
         self.text = ""
         self.links = []
@@ -153,4 +153,4 @@ view = gr.Interface(
     flagging_mode="never",
 )
 
-view.launch()
+view.launch(share=True)
