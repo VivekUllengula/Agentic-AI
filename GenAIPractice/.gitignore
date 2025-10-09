@@ -1,2 +1,5 @@
 .env
 .vscode
+news_output/
+__pycache__/
+*.pyc

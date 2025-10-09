@@ -51,19 +51,6 @@ def create_rag_chain(pdf_path: str):
         texts = text_splitter.split_documents(documents)
         print(f"STATUS: Document loaded and split into {len(texts)} chunks.")
 
-        for text in texts:
-            print(f"--- Document Chunk ---\n{text}\n") 
-        print("----------------------")
-    
-    except Exception as e:
-        print("Error loading or splitting document.")
-        print(f"Details: {e}")
-
-if __name__ == "__main__":
-        create_rag_chain(DOCUMENT_PATH)
-        """
-    
-
         #2 Embedding and Vector Store Creation
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
@@ -131,4 +118,3 @@ for user_q, model_a in chat_history:
     print(f"User: {user_q}")
     print(f"Model: {model_a}")
     print("-" * 20) 
-    """
