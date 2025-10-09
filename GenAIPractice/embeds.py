@@ -21,7 +21,6 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-MODEL = os.getenv("GOOGLE_MODEL_NAME")
 
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
