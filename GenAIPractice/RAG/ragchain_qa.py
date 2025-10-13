@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import gradio as gr
+from fastapi import FastAPI
 
 from langchain_chroma import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
@@ -17,7 +18,9 @@ MODEL = os.getenv("GOOGLE_MODEL_NAME")
 #Creating an inference LLM
 llm = ChatGoogleGenerativeAI(model=MODEL)
 
-pdf_path = "sample2.pdf"
+app = FastAPI()
+
+pdf_path = "BajiBabu_Resume.pdf"
 
 #Creating the RAG chain
 def create_rag_chain(path: str):
@@ -42,6 +45,11 @@ def create_rag_chain(path: str):
         documents=texts,
         embedding=embeddings
     )
+
+    results = vector_store.similarity_search("What is AI?", k=3)
+
+    for doc in results:
+        print(doc.page_content)
 
     #Creating a retriever from the vector store
     retriever = vector_store.as_retriever(search_kwargs={"k": 3})
@@ -82,14 +90,22 @@ def ask_question(question, history) -> str:
     response = chain.run(question)
     return response
 
+
+
 #Creating the gradio interface
+glass_theme = gr.themes.Soft(
+    primary_hue="indigo",
+    secondary_hue="blue",
+)
 
 gr.ChatInterface(
     fn=ask_question,
     title="Document Q&A with RAG",
     description="Ask questions about the content of the uploaded PDF document.",
-    theme="compact"
+    theme=glass_theme
 ).launch(share=True)
+
+
 
 
 
