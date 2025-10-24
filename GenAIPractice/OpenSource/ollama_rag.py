@@ -13,5 +13,6 @@ messages=[
     'content': f'{user_prompt}',
   }
 ]
+
 response: ChatResponse = chat(model='gemma3:1b',messages=messages)
 print(response.message.content)

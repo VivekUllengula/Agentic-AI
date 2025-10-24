@@ -3,7 +3,6 @@ import os
 import gradio as gr
 from ollama import chat
 
-
 # Basic configurable defaults via env (optional)
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:1b")
 SYSTEM_PROMPT = os.getenv(
